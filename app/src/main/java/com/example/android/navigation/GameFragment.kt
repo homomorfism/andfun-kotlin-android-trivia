@@ -25,6 +25,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.android.navigation.databinding.FragmentGameBinding
 
+
 class GameFragment : Fragment() {
     data class Question(
             val text: String,
