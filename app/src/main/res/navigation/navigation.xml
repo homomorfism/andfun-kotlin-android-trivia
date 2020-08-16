@@ -42,6 +42,36 @@
              Go to the navigation editor and hover over the GameFragment.  Click on the
              connection point and drag the action line to the GameOverFragment.
         -->
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment2"
+            app:destination="@id/gameWonFragment2"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment3"
+            app:destination="@id/gameOverFragment3"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameWonFragment2"
+        android:name="com.example.android.navigation.GameWonFragment"
+        android:label="fragment_game_won"
+        tools:layout="@layout/fragment_game_won" >
+        <action
+            android:id="@+id/action_gameWonFragment2_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment3"
+        android:name="com.example.android.navigation.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_gameOverFragment3_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment" />
     </fragment>
     <!-- TODO (01) Add the GameWonFragment to the Navigation Graph
              Go to the navigation editor and click the add button.  Add fragment_game_won. -->
