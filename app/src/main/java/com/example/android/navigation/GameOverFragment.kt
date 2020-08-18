@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.android.navigation.databinding.FragmentGameOverBinding
 
@@ -31,11 +32,14 @@ class GameOverFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_over, container, false)
+
         binding.tryAgainButton.setOnClickListener { view: View ->
-            // TODO (09) Replace action ID with actionGameOverFragmentToGameFragment
-            // From GameOverFragmentDirections
-            view.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
+            view.findNavController().navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
         }
+
+        val args = GameWonFragmentArgs.fromBundle(arguments!!)
+        Toast.makeText(context, "Your score: ${args.numCorrect}/${args.numQuestions} !", Toast.LENGTH_SHORT).show()
+
         return binding.root
     }
 }
